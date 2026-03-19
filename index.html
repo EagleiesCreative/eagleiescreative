@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eagleies Creative — PT Eagleies Digital Kreatif</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --bg: #0e0e0e;
@@ -18,14 +27,16 @@
       --text: #f0ede8;
       --muted: #888;
       --accent: #c9a84c;
-      --accent-dim: rgba(201,168,76,0.12);
-      --accent-glow: rgba(201,168,76,0.06);
+      --accent-dim: rgba(201, 168, 76, 0.12);
+      --accent-glow: rgba(201, 168, 76, 0.06);
       --serif: 'Cormorant Garamond', Georgia, serif;
       --sans: 'Syne', sans-serif;
       --mono: 'DM Mono', monospace;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background: var(--bg);
@@ -38,20 +49,36 @@
     }
 
     /* ── SCROLLBAR ── */
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 2px;
+    }
 
     /* ── NAV ── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 0 4vw;
       height: 72px;
-      background: rgba(14,14,14,0.85);
+      background: rgba(14, 14, 14, 0.85);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
+
     .nav-logo {
       font-family: var(--serif);
       font-size: 1.4rem;
@@ -60,10 +87,17 @@
       color: var(--text);
       text-decoration: none;
     }
-    .nav-logo span { color: var(--accent); }
-    .nav-links {
-      display: flex; gap: 2.5rem; list-style: none;
+
+    .nav-logo span {
+      color: var(--accent);
     }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
     .nav-links a {
       font-family: var(--mono);
       font-size: 0.72rem;
@@ -73,25 +107,33 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--accent); }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
 
     /* ── HERO ── */
     #hero {
       min-height: 100vh;
-      display: flex; flex-direction: column;
+      display: flex;
+      flex-direction: column;
       justify-content: flex-end;
       padding: 0 4vw 10vh;
       position: relative;
       overflow: hidden;
     }
+
     .hero-bg {
-      position: absolute; inset: 0;
+      position: absolute;
+      inset: 0;
       background:
-        radial-gradient(ellipse 60% 50% at 70% 30%, rgba(201,168,76,0.07) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+        radial-gradient(ellipse 60% 50% at 70% 30%, rgba(201, 168, 76, 0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201, 168, 76, 0.04) 0%, transparent 60%);
     }
+
     .hero-grid {
-      position: absolute; inset: 0;
+      position: absolute;
+      inset: 0;
       background-image:
         linear-gradient(var(--border) 1px, transparent 1px),
         linear-gradient(90deg, var(--border) 1px, transparent 1px);
@@ -99,6 +141,7 @@
       opacity: 0.3;
       mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
     }
+
     .hero-eyebrow {
       font-family: var(--mono);
       font-size: 0.68rem;
@@ -109,6 +152,7 @@
       opacity: 0;
       animation: fadeUp 0.8s 0.2s forwards;
     }
+
     .hero-headline {
       font-family: var(--serif);
       font-size: clamp(3.5rem, 9vw, 8rem);
@@ -120,10 +164,12 @@
       opacity: 0;
       animation: fadeUp 0.9s 0.35s forwards;
     }
+
     .hero-headline em {
       font-style: italic;
       color: var(--accent);
     }
+
     .hero-sub {
       font-family: var(--sans);
       font-size: 0.95rem;
@@ -135,11 +181,15 @@
       opacity: 0;
       animation: fadeUp 0.9s 0.5s forwards;
     }
+
     .hero-cta-row {
-      display: flex; gap: 1.5rem; align-items: center;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
       opacity: 0;
       animation: fadeUp 0.9s 0.65s forwards;
     }
+
     .btn-primary {
       display: inline-block;
       padding: 0.85rem 2.2rem;
@@ -153,9 +203,16 @@
       text-decoration: none;
       transition: background 0.2s, transform 0.2s;
     }
-    .btn-primary:hover { background: #d9bc6a; transform: translateY(-1px); }
+
+    .btn-primary:hover {
+      background: #d9bc6a;
+      transform: translateY(-1px);
+    }
+
     .btn-ghost {
-      display: inline-flex; align-items: center; gap: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       font-family: var(--mono);
       font-size: 0.72rem;
       letter-spacing: 0.12em;
@@ -164,12 +221,24 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-    .btn-ghost:hover { color: var(--text); }
-    .btn-ghost::after { content: '→'; transition: transform 0.2s; }
-    .btn-ghost:hover::after { transform: translateX(4px); }
+
+    .btn-ghost:hover {
+      color: var(--text);
+    }
+
+    .btn-ghost::after {
+      content: '→';
+      transition: transform 0.2s;
+    }
+
+    .btn-ghost:hover::after {
+      transform: translateX(4px);
+    }
 
     .hero-legal {
-      position: absolute; right: 4vw; bottom: 10vh;
+      position: absolute;
+      right: 4vw;
+      bottom: 10vh;
       writing-mode: vertical-rl;
       font-family: var(--mono);
       font-size: 0.6rem;
@@ -181,21 +250,30 @@
     }
 
     /* ── SECTION COMMONS ── */
-    section { padding: 7rem 4vw; }
+    section {
+      padding: 7rem 4vw;
+    }
+
     .section-label {
       font-family: var(--mono);
       font-size: 0.65rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--accent);
-      display: flex; align-items: center; gap: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
       margin-bottom: 1rem;
     }
+
     .section-label::before {
       content: '';
-      display: block; width: 32px; height: 1px;
+      display: block;
+      width: 32px;
+      height: 1px;
       background: var(--accent);
     }
+
     .section-title {
       font-family: var(--serif);
       font-size: clamp(2.2rem, 5vw, 4rem);
@@ -203,30 +281,61 @@
       line-height: 1.1;
       letter-spacing: -0.01em;
     }
-    .section-title em { font-style: italic; color: var(--accent); }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
     .section-divider {
-      height: 1px; background: var(--border);
+      height: 1px;
+      background: var(--border);
       margin: 0 4vw;
     }
 
     /* ── ABOUT ── */
-    #about { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
     .about-left {}
+
     .about-desc {
       margin-top: 2.5rem;
       font-size: 1rem;
       line-height: 1.8;
       color: #b8b0a4;
     }
-    .about-desc p + p { margin-top: 1.2rem; }
-    .about-right { padding-top: 5rem; }
-    .about-stat-row { display: flex; flex-direction: column; gap: 0; }
+
+    .about-desc p+p {
+      margin-top: 1.2rem;
+    }
+
+    .about-right {
+      padding-top: 5rem;
+    }
+
+    .about-stat-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
     .about-stat {
       padding: 2rem 0;
       border-bottom: 1px solid var(--border);
-      display: flex; justify-content: space-between; align-items: baseline;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
     }
-    .about-stat:first-child { border-top: 1px solid var(--border); }
+
+    .about-stat:first-child {
+      border-top: 1px solid var(--border);
+    }
+
     .stat-num {
       font-family: var(--serif);
       font-size: 3.5rem;
@@ -234,6 +343,7 @@
       color: var(--accent);
       line-height: 1;
     }
+
     .stat-label {
       font-family: var(--mono);
       font-size: 0.68rem;
@@ -243,6 +353,7 @@
       text-align: right;
       max-width: 160px;
     }
+
     .legal-badge {
       margin-top: 3rem;
       padding: 1.2rem 1.5rem;
@@ -250,6 +361,7 @@
       background: var(--surface);
       display: inline-block;
     }
+
     .legal-badge-label {
       font-family: var(--mono);
       font-size: 0.6rem;
@@ -258,6 +370,7 @@
       color: var(--accent);
       margin-bottom: 0.4rem;
     }
+
     .legal-badge-name {
       font-family: var(--serif);
       font-size: 1.1rem;
@@ -266,9 +379,20 @@
     }
 
     /* ── SERVICES ── */
-    #services { background: var(--surface); }
-    .services-header { margin-bottom: 4rem; }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+    #services {
+      background: var(--surface);
+    }
+
+    .services-header {
+      margin-bottom: 4rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
     .service-card {
       padding: 3rem 2.5rem;
       border: 1px solid var(--border);
@@ -277,8 +401,15 @@
       transition: background 0.3s;
       cursor: default;
     }
-    .service-card:last-child { border-right: 1px solid var(--border); }
-    .service-card:hover { background: var(--accent-dim); }
+
+    .service-card:last-child {
+      border-right: 1px solid var(--border);
+    }
+
+    .service-card:hover {
+      background: var(--accent-dim);
+    }
+
     .service-num {
       font-family: var(--mono);
       font-size: 0.6rem;
@@ -286,11 +417,21 @@
       color: var(--accent);
       margin-bottom: 2.5rem;
     }
+
     .service-icon {
-      width: 40px; height: 40px;
+      width: 40px;
+      height: 40px;
       margin-bottom: 1.5rem;
     }
-    .service-icon path, .service-icon line, .service-icon circle, .service-icon polyline, .service-icon rect { stroke: var(--accent); }
+
+    .service-icon path,
+    .service-icon line,
+    .service-icon circle,
+    .service-icon polyline,
+    .service-icon rect {
+      stroke: var(--accent);
+    }
+
     .service-title {
       font-family: var(--serif);
       font-size: 1.7rem;
@@ -299,15 +440,20 @@
       margin-bottom: 1rem;
       color: var(--text);
     }
+
     .service-desc {
       font-size: 0.88rem;
       line-height: 1.7;
       color: var(--muted);
     }
+
     .service-tags {
       margin-top: 2rem;
-      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
+
     .tag {
       font-family: var(--mono);
       font-size: 0.6rem;
@@ -317,7 +463,10 @@
       border: 1px solid var(--border);
       color: var(--muted);
     }
-    .service-card:hover .tag { border-color: rgba(201,168,76,0.3); }
+
+    .service-card:hover .tag {
+      border-color: rgba(201, 168, 76, 0.3);
+    }
 
     /* ── VISION ── */
     #vision {
@@ -326,10 +475,13 @@
       position: relative;
       overflow: hidden;
     }
+
     .vision-bg {
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,168,76,0.05) 0%, transparent 70%);
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201, 168, 76, 0.05) 0%, transparent 70%);
     }
+
     .vision-quote {
       font-family: var(--serif);
       font-size: clamp(2rem, 4.5vw, 3.5rem);
@@ -341,16 +493,19 @@
       color: var(--text);
       position: relative;
     }
+
     .vision-quote::before {
       content: '"';
       font-size: 8rem;
       line-height: 0;
       position: absolute;
-      top: 3rem; left: -2rem;
+      top: 3rem;
+      left: -2rem;
       color: var(--accent);
       opacity: 0.2;
       font-style: normal;
     }
+
     .vision-attr {
       font-family: var(--mono);
       font-size: 0.68rem;
@@ -360,15 +515,32 @@
     }
 
     /* ── WHY US ── */
-    #why { display: grid; grid-template-columns: 1fr 1.4fr; gap: 8rem; align-items: center; }
-    .why-right { display: flex; flex-direction: column; gap: 0; }
+    #why {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 8rem;
+      align-items: center;
+    }
+
+    .why-right {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
     .why-item {
       padding: 2rem 0;
       border-bottom: 1px solid var(--border);
-      display: grid; grid-template-columns: 40px 1fr; gap: 1.5rem;
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 1.5rem;
       align-items: start;
     }
-    .why-item:first-child { border-top: 1px solid var(--border); }
+
+    .why-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
     .why-idx {
       font-family: var(--mono);
       font-size: 0.6rem;
@@ -376,6 +548,7 @@
       color: var(--accent);
       padding-top: 0.2rem;
     }
+
     .why-content-title {
       font-family: var(--sans);
       font-size: 0.95rem;
@@ -383,6 +556,7 @@
       margin-bottom: 0.4rem;
       color: var(--text);
     }
+
     .why-content-desc {
       font-size: 0.85rem;
       line-height: 1.7;
@@ -390,12 +564,24 @@
     }
 
     /* ── CONTACT ── */
-    #contact { background: var(--surface); }
-    .contact-inner {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+    #contact {
+      background: var(--surface);
     }
-    .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
     .contact-item {}
+
     .contact-item-label {
       font-family: var(--mono);
       font-size: 0.6rem;
@@ -404,17 +590,28 @@
       color: var(--accent);
       margin-bottom: 0.5rem;
     }
+
     .contact-item-value {
       font-size: 0.95rem;
       color: var(--text);
     }
+
     .contact-item-value a {
       color: var(--text);
       text-decoration: none;
       transition: color 0.2s;
     }
-    .contact-item-value a:hover { color: var(--accent); }
-    .contact-right { display: flex; flex-direction: column; justify-content: center; }
+
+    .contact-item-value a:hover {
+      color: var(--accent);
+    }
+
+    .contact-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     .contact-cta-heading {
       font-family: var(--serif);
       font-size: 2.5rem;
@@ -422,7 +619,12 @@
       line-height: 1.2;
       margin-bottom: 1rem;
     }
-    .contact-cta-heading em { font-style: italic; color: var(--accent); }
+
+    .contact-cta-heading em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
     .contact-cta-sub {
       font-size: 0.88rem;
       color: var(--muted);
@@ -434,30 +636,52 @@
     footer {
       padding: 2rem 4vw;
       border-top: 1px solid var(--border);
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
+
     .footer-left {
       font-family: var(--mono);
       font-size: 0.62rem;
       letter-spacing: 0.1em;
       color: var(--border);
     }
+
     .footer-brand {
       font-family: var(--serif);
       font-size: 1rem;
       font-weight: 500;
       color: var(--muted);
     }
-    .footer-brand span { color: var(--accent); }
+
+    .footer-brand span {
+      color: var(--accent);
+    }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     @keyframes fadeIn {
-      from { opacity: 0; } to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     .reveal {
@@ -465,29 +689,73 @@
       transform: translateY(30px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
+
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      #about { grid-template-columns: 1fr; gap: 3rem; }
-      .about-right { padding-top: 0; }
-      .services-grid { grid-template-columns: 1fr; }
-      .service-card { border-right: 1px solid var(--border); border-top: none; }
-      .service-card:first-child { border-top: 1px solid var(--border); }
-      #vision .vision-quote::before { display: none; }
-      #why { grid-template-columns: 1fr; gap: 3rem; }
-      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .nav-links { display: none; }
+      #about {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .about-right {
+        padding-top: 0;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        border-right: 1px solid var(--border);
+        border-top: none;
+      }
+
+      .service-card:first-child {
+        border-top: 1px solid var(--border);
+      }
+
+      #vision .vision-quote::before {
+        display: none;
+      }
+
+      #why {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- NAV -->
@@ -507,7 +775,8 @@
     <div class="hero-grid"></div>
     <p class="hero-eyebrow">PT Eagleies Digital Kreatif &nbsp;·&nbsp; Est. Indonesia</p>
     <h1 class="hero-headline">Where <em>Vision</em><br>Takes Flight</h1>
-    <p class="hero-sub">We craft unforgettable event experiences and powerful digital solutions — from the stage to the screen, and every line of code in between.</p>
+    <p class="hero-sub">We craft unforgettable event experiences and powerful digital solutions — from the stage to the
+      screen, and every line of code in between.</p>
     <div class="hero-cta-row">
       <a href="#contact" class="btn-primary">Work With Us</a>
       <a href="#services" class="btn-ghost">Our Services</a>
@@ -523,9 +792,14 @@
       <p class="section-label reveal">About Us</p>
       <h2 class="section-title reveal reveal-delay-1">A Creative <em>Force</em><br>Built for Impact</h2>
       <div class="about-desc reveal reveal-delay-2">
-        <p>Eagleies Creative is a multi-disciplinary creative company operating under <strong style="color:var(--text)">PT Eagleies Digital Kreatif</strong> — a legally registered Indonesian entity built to deliver high-impact creative and digital work at every scale.</p>
-        <p>From producing large-scale corporate events and brand activations to broadcasting live experiences and engineering bespoke software products, we bring a rigorous creative discipline and entrepreneurial mindset to every brief.</p>
-        <p>We believe great work lives at the intersection of craft, technology, and intention — and we operate exactly there.</p>
+        <p>Eagleies Creative is a multi-disciplinary creative company operating under <strong
+            style="color:var(--text)">PT Eagleies Digital Kreatif</strong> — a legally registered Indonesian entity
+          built to deliver high-impact creative and digital work at every scale.</p>
+        <p>From producing large-scale corporate events and brand activations to broadcasting live experiences and
+          engineering bespoke software products, we bring a rigorous creative discipline and entrepreneurial mindset to
+          every brief.</p>
+        <p>We believe great work lives at the intersection of craft, technology, and intention — and we operate exactly
+          there.</p>
       </div>
       <div class="legal-badge reveal reveal-delay-3">
         <p class="legal-badge-label">Legal Entity</p>
@@ -567,13 +841,15 @@
       <div class="service-card reveal">
         <p class="service-num">01</p>
         <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="10" width="32" height="22" rx="1"/>
-          <line x1="14" y1="34" x2="26" y2="34"/>
-          <line x1="20" y1="32" x2="20" y2="36"/>
-          <circle cx="20" cy="21" r="5"/>
+          <rect x="4" y="10" width="32" height="22" rx="1" />
+          <line x1="14" y1="34" x2="26" y2="34" />
+          <line x1="20" y1="32" x2="20" y2="36" />
+          <circle cx="20" cy="21" r="5" />
         </svg>
         <h3 class="service-title">Event Organization</h3>
-        <p class="service-desc">End-to-end conceptualization, production, and execution of corporate events, brand activations, conferences, and experiential marketing campaigns. We handle the vision, logistics, and every detail in between.</p>
+        <p class="service-desc">End-to-end conceptualization, production, and execution of corporate events, brand
+          activations, conferences, and experiential marketing campaigns. We handle the vision, logistics, and every
+          detail in between.</p>
         <div class="service-tags">
           <span class="tag">Corporate Events</span>
           <span class="tag">Brand Activation</span>
@@ -585,12 +861,14 @@
       <div class="service-card reveal reveal-delay-1">
         <p class="service-num">02</p>
         <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
-          <polyline points="4,28 12,18 18,24 26,12 36,20"/>
-          <circle cx="36" cy="10" r="4"/>
-          <line x1="32" y1="10" x2="4" y2="10"/>
+          <polyline points="4,28 12,18 18,24 26,12 36,20" />
+          <circle cx="36" cy="10" r="4" />
+          <line x1="32" y1="10" x2="4" y2="10" />
         </svg>
         <h3 class="service-title">Event Broadcasting</h3>
-        <p class="service-desc">Professional live-streaming, multi-camera production, and hybrid event broadcasting solutions. We bring your event to audiences far beyond the physical space — with broadcast-grade quality and reliability.</p>
+        <p class="service-desc">Professional live-streaming, multi-camera production, and hybrid event broadcasting
+          solutions. We bring your event to audiences far beyond the physical space — with broadcast-grade quality and
+          reliability.</p>
         <div class="service-tags">
           <span class="tag">Live Streaming</span>
           <span class="tag">Multi-Cam</span>
@@ -602,12 +880,14 @@
       <div class="service-card reveal reveal-delay-2">
         <p class="service-num">03</p>
         <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
-          <polyline points="12,16 6,20 12,24"/>
-          <polyline points="28,16 34,20 28,24"/>
-          <line x1="22" y1="12" x2="18" y2="28"/>
+          <polyline points="12,16 6,20 12,24" />
+          <polyline points="28,16 34,20 28,24" />
+          <line x1="22" y1="12" x2="18" y2="28" />
         </svg>
         <h3 class="service-title">Software Development</h3>
-        <p class="service-desc">Custom software solutions, SaaS products, and digital platforms built with modern technology stacks. From ideation to deployment, we engineer products that solve real problems with precision and elegance.</p>
+        <p class="service-desc">Custom software solutions, SaaS products, and digital platforms built with modern
+          technology stacks. From ideation to deployment, we engineer products that solve real problems with precision
+          and elegance.</p>
         <div class="service-tags">
           <span class="tag">SaaS Products</span>
           <span class="tag">Web Apps</span>
@@ -624,7 +904,8 @@
   <!-- VISION -->
   <section id="vision">
     <div class="vision-bg"></div>
-    <p class="vision-quote reveal">"We don't just execute projects — we build experiences that resonate, products that endure, and brands that matter."</p>
+    <p class="vision-quote reveal">"We don't just execute projects — we build experiences that resonate, products that
+      endure, and brands that matter."</p>
     <p class="vision-attr reveal reveal-delay-1">Eagleies Creative &nbsp;— &nbsp;Our Founding Principle</p>
   </section>
 
@@ -635,35 +916,41 @@
     <div class="why-left">
       <p class="section-label reveal">Why Eagleies</p>
       <h2 class="section-title reveal reveal-delay-1">Trusted. Creative.<br><em>Relentless.</em></h2>
-      <p class="about-desc reveal reveal-delay-2" style="margin-top:1.5rem">We're not a vendor — we're a creative partner. Our model is built on deep collaboration, clear accountability, and an obsession with quality that shows up in every deliverable.</p>
+      <p class="about-desc reveal reveal-delay-2" style="margin-top:1.5rem">We're not a vendor — we're a creative
+        partner. Our model is built on deep collaboration, clear accountability, and an obsession with quality that
+        shows up in every deliverable.</p>
     </div>
     <div class="why-right">
       <div class="why-item reveal">
         <span class="why-idx">01</span>
         <div>
           <p class="why-content-title">Multi-Disciplinary Under One Roof</p>
-          <p class="why-content-desc">Events, broadcasting, and software — three capabilities that compound when combined. We create synergy across verticals that single-focus agencies simply can't.</p>
+          <p class="why-content-desc">Events, broadcasting, and software — three capabilities that compound when
+            combined. We create synergy across verticals that single-focus agencies simply can't.</p>
         </div>
       </div>
       <div class="why-item reveal reveal-delay-1">
         <span class="why-idx">02</span>
         <div>
           <p class="why-content-title">Legally Registered Entity</p>
-          <p class="why-content-desc">Operating as PT Eagleies Digital Kreatif means you engage a credible, accountable business partner — with proper invoicing, documentation, and compliance.</p>
+          <p class="why-content-desc">Operating as PT Eagleies Digital Kreatif means you engage a credible, accountable
+            business partner — with proper invoicing, documentation, and compliance.</p>
         </div>
       </div>
       <div class="why-item reveal reveal-delay-2">
         <span class="why-idx">03</span>
         <div>
           <p class="why-content-title">Technology-First Creative Mindset</p>
-          <p class="why-content-desc">Our creative work is always informed by what technology makes possible. This means sharper concepts, better production, and smarter solutions.</p>
+          <p class="why-content-desc">Our creative work is always informed by what technology makes possible. This means
+            sharper concepts, better production, and smarter solutions.</p>
         </div>
       </div>
       <div class="why-item reveal reveal-delay-3">
         <span class="why-idx">04</span>
         <div>
           <p class="why-content-title">End-to-End Ownership</p>
-          <p class="why-content-desc">We own every phase — from brief to delivery. No hand-offs, no gaps. Just one team, fully accountable for your outcome.</p>
+          <p class="why-content-desc">We own every phase — from brief to delivery. No hand-offs, no gaps. Just one team,
+            fully accountable for your outcome.</p>
         </div>
       </div>
     </div>
@@ -676,8 +963,9 @@
     <div class="contact-inner">
       <div class="contact-right reveal">
         <h2 class="contact-cta-heading">Let's Build<br>Something <em>Great</em></h2>
-        <p class="contact-cta-sub">Whether you're planning an event, need a broadcasting partner, or have a software idea — we'd love to hear from you. Reach out and let's start the conversation.</p>
-        <a href="mailto:hello@eagleiescreative.com" class="btn-primary">Get In Touch</a>
+        <p class="contact-cta-sub">Whether you're planning an event, need a broadcasting partner, or have a software
+          idea — we'd love to hear from you. Reach out and let's start the conversation.</p>
+        <a href="mailto:sales@eagleiescreative.com" class="btn-primary">Get In Touch</a>
       </div>
       <div class="contact-info reveal reveal-delay-1">
         <div class="contact-item">
@@ -690,7 +978,8 @@
         </div>
         <div class="contact-item">
           <p class="contact-item-label">Services</p>
-          <p class="contact-item-value">Event Organization &nbsp;·&nbsp; Broadcasting &nbsp;·&nbsp; Software Development</p>
+          <p class="contact-item-value">Event Organization &nbsp;·&nbsp; Broadcasting &nbsp;·&nbsp; Software Development
+          </p>
         </div>
         <div class="contact-item">
           <p class="contact-item-label">Email</p>
@@ -706,7 +995,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p class="footer-left">© 2024 PT Eagleies Digital Kreatif. All rights reserved.</p>
+    <p class="footer-left">© 2026 PT Eagleies Digital Kreatif. All rights reserved.</p>
     <p class="footer-brand">Eagleies<span>.</span></p>
     <p class="footer-left" style="text-align:right">Modern Creative &nbsp;·&nbsp; Digital Forward</p>
   </footer>
@@ -730,4 +1019,5 @@
     });
   </script>
 </body>
+
 </html>
